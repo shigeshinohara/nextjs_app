@@ -1,11 +1,10 @@
 import { getAllEmployeesData } from "../lib/strapi";
 
 const Ssr = ({employees}) => {
-    console.log(employees)
   return (<>
     <div>Server Side Rendering</div>
     <ul>
-       {employees &&  employees.map((emp) => <li>{emp.attributes.Name} - {emp.attributes.email}</li> )}
+       {employees &&  employees.map((emp) => <li key={emp.id}>{emp.attributes.Name}</li> )}
     </ul>
     </>
   )
